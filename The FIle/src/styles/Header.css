@@ -1,0 +1,127 @@
+.hamburger {
+  display: block !important;
+  font-size: 30px;
+  cursor: pointer;
+  color: #17252A!important;
+  padding: 10px;
+  border-radius: 13px;
+  position: relative; 
+  z-index: 1000; 
+}
+
+.logo {
+  transform: scale(2.0);
+  display: block;
+  padding-left: 20px;
+  width: 120px;
+  height: 35px;
+  object-fit: cover;
+  object-position: center; 
+  max-height: 100%;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+  background-color: #17252A;
+  border-radius: 13px;
+}
+
+.hamburger:active {
+  background-color: gray;
+  border-radius: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  font-size: 18px;
+  background: #2B7A78; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 15px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed; 
+  top: 80px;
+  right: -250px; 
+  background: white;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  border-radius: 8px; 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform: translateX(100%); 
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu.open {
+  right: 20px;
+  transform: translateX(0); 
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu a {
+  text-decoration: none; 
+  color: #333;
+  padding: 10px 15px; 
+  border-radius: 4px; 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+  opacity 0.2s ease;
+  transform: translateX(20px); 
+  opacity: 0;
+}
+
+.menu.open a {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu a:hover {
+  background: #f0f0f0; 
+}
+
+.bar {
+  height: 4px;
+  width: 30px;
+  background-color: rgb(255, 255, 255); 
+  margin: 4px 0; 
+  transition: all 0.3s ease; 
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0; 
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
